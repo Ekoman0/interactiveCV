@@ -13,10 +13,10 @@ export default function Hero({ onEnterPC }) {
   const [isNearPC, setIsNearPC] = useState(false);
 
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
-    loaderUrl:     '/unityroombuild/Build/unityroombuild.loader.js',
-    dataUrl:       '/unityroombuild/Build/unityroombuild.data.unityweb',
-    frameworkUrl:  '/unityroombuild/Build/unityroombuild.framework.js.unityweb',
-    codeUrl:       '/unityroombuild/Build/unityroombuild.wasm.unityweb',
+    loaderUrl:     import.meta.env.BASE_URL + 'unityroombuild/Build/unityroombuild.loader.js',
+    dataUrl:       import.meta.env.BASE_URL + 'unityroombuild/Build/unityroombuild.data.unityweb',
+    frameworkUrl:  import.meta.env.BASE_URL + 'unityroombuild/Build/unityroombuild.framework.js.unityweb',
+    codeUrl:       import.meta.env.BASE_URL + 'unityroombuild/Build/unityroombuild.wasm.unityweb',
   });
 
   // Yükleme yüzdesi
