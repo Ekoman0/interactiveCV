@@ -15,7 +15,7 @@ export default function Contact() {
         Yeni bir proje, iş teklifi veya sadece merhaba mı? Her zaman buradayım.
       </p>
 
-      <div className="contact-links reveal reveal-delay-2">
+      <div className="contact-links reveal reveal-delay-2" style={{ position: 'relative', zIndex: 100 }}>
         <a
           href="mailto:erkandursun791@gmail.com"
           className="contact-link primary"

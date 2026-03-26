@@ -48,7 +48,7 @@ const PROJECTS = [
     tags: ['C#', 'IoT', 'SQL', 'Endüstriyel', 'Staj'],
     color: '#06b6d4',
     secret: true,
-    link: '#',
+    link: 'https://github.com/Ekoman0/PotaTrack',
   },
   {
     id: 'edu-game',

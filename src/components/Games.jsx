@@ -209,7 +209,8 @@ export default function Games() {
                   ) : (
                     <button
                       className="btn-sm btn-sm-coming"
-                      onClick={() => setModal(g)}
+                      onClick={g.id === 'mine-wife' ? undefined : () => setModal(g)}
+                      style={g.id === 'mine-wife' ? { cursor: 'default' } : {}}
                     >
                       🔜 YAKINDA
                     </button>

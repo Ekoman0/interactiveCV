@@ -11,6 +11,8 @@ import { Unity, useUnityContext } from 'react-unity-webgl'
 export default function Hero({ onEnterPC }) {
   const [loadPct, setLoadPct] = useState(0);
   const [isNearPC, setIsNearPC] = useState(false);
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
     loaderUrl:     import.meta.env.BASE_URL + 'unityroombuild/Build/unityroombuild.loader.js',
@@ -146,6 +148,23 @@ export default function Hero({ onEnterPC }) {
               (Komut Sistemiyle Projeleri ve Oyunları Keşfet)
             </div>
           </div>
+        </div>
+      )}
+
+      {/* ── MOBİL KULLANICILAR İÇİN GEÇİŞ BUTONU ── */}
+      {(isLoaded && isMobile) && (
+        <div style={{
+          position: 'absolute', top: 20, right: 20, zIndex: 50
+        }}>
+          <button 
+            onClick={() => onEnterPC && onEnterPC()}
+            style={{
+              background: '#c8ff41', color: '#000', border: 'none', padding: '12px 20px',
+              fontFamily: "'JetBrains Mono', monospace", fontWeight: 'bold', borderRadius: '4px', cursor: 'pointer',
+              boxShadow: '0 4px 12px rgba(200, 255, 65, 0.3)'
+            }}>
+            CV'YE GEÇ ➔
+          </button>
         </div>
       )}
 
